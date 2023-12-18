@@ -1,0 +1,113 @@
+
+ROM used:   11188/32768 (34%)
+            11188/32768 (34%) including unused fragments
+
+            1.9 Average locations per line
+            14.9 Average locations per statement
+
+RAM used:   109/2048 (5%) at main() level
+            209/2048 (10%) worst case
+
+Stack used: 13 worst case (6 in main + 7 for interrupts)
+Stack size: 31
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+    3     0   0  $linker.c
+  103    31   4  main.c
+   45     0   0  configure.h
+  837     0   0  ..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h
+  163     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\stdint.h
+   37     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h
+  423     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\string.h
+   32     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h
+   28     0   0  ..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h
+ 1351   359  48  ..\..\..\..\Program Files (x86)\PICC\drivers\stdlib.h
+   63     0   0  MPU9250\mpu9250_interface.h
+   27     0   0  MPU9250\mpu9250_config.h
+  152     0   0  MPU9250\mpu9250_private.h
+  250   104  14  MPU9250\mpu9250_program.c
+ 2229   257  34  ..\..\..\..\Program Files (x86)\PICC\drivers\MATH.H
+----- -----
+ 5743   751 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0    242   1   11             @MULFF
+0     54   0    2             @ITOF
+0    618   3   16             @ADDFF
+0    346   2   14             @DIVFF
+0     38   0    1             @delay_ms1
+0     28   0    1             @I2C_WRITEU_1
+0     28   0    1             @I2C_READU_1
+0    412   2    8   493  4.3  imu_update
+0     56   0    4             @SFTOI
+0    820   4    2   838  4.9  MAIN
+0     28   0    0             @const1017
+0     34   0    2             @PSTRINGC_9600_31766_31767
+0     56   0    0             @const1019
+0     34   0    0             @const1020
+0     88   0    0             @const1021
+0     32   0    3             @PSTRINGCN_9600_31766_31767
+0     64   0    5             @FTOSD
+0    142   1   13             @DIV3232
+0    398   2   13             @PRINTF_L32D_9600_31766_31767FPFPF
+0     26   0    0             @const1033
+0     40   0    3             @DIV88
+0    178   1    6             @PRINTF_D_9600_31766_31767
+0     32   0    0             @const1040
+0    118   1   10             @FLT
+0     72   0    2             @SITOF
+0    268   1   18   510 10.6  sqrt
+0   1238   6   21  1082  6.9  atan
+0     78   0    5   134  2.2  mpu9250_writeByte
+0     68   0    6   223  3.7  mpu9250_readByte
+0     52   0    9   228  3.4  read_word
+0     24   0    4    88  2.1  read_gyro_word
+0     24   0    4    88  2.1  read_accel_word
+0     38   0    4    88  2.1  read_mag_word
+0    250   1    0   823  4.3  mpu9250_init
+0     24   0    0             @const1186
+0     28   0    0             @const1188
+0     22   0    0             @const1189
+0     26   0    0             @const1190
+0    424   2    1   567  2.8  mpu9250_print_initRegisters
+0     22   0    0             @const1192
+0     66   0    2             @PRINTF_X_9600_31766_31767
+0     26   0    0             @const1198
+0     26   0    0             @const1199
+0     26   0    0             @const1200
+0     32   0    0             @const1201
+0     30   0    0             @const1202
+0    254   1   10   351  3.6  mpu9250_read_gyro
+0    454   2   16   411  4.6  mpu9250_read_accelerometer
+0   1160   5   20  1036  6.2  mpu9250_read_magnometer
+0     58   0    0             @const1216
+0     58   0    0             @const1225
+0     56   0    0             @const1226
+0    570   3   10   383  5.7  mpu9250_gyro_calibration
+0   1052   5   18   485  5.4  mpu9250_calculate_angles
+0    604   3   26   482  5.2  kalman_1d
+ Inline         0             @cinit1
+
+Program metrics:
+    Functions               18
+    Statements              751
+    Comments                500
+    Volume (V)              14028
+    Difficulty (D)          75.7
+    Effort to implement (E) 1062035
+    Time to implement (T)   16 hours, 23 minutes
+    Est Delivered Bugs (B)  3
+    Cyclomatic Complexity   9
+    Maintainability (MI)    123
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00002     4  0  
+00004-00006     0  4  
+00008-00094   142  0  
+00096-07FFE  11042  21576  
+
+
+

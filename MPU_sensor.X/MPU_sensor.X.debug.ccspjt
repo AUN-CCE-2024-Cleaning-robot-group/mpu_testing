@@ -1,0 +1,19 @@
+[PROJECT]
+Target=dist\default\debug\MPU_sensor.X.debug.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.015
+Compiler=PCH
+[Target Data]
+FileList=dist\default\debug\MPU_sensor.X.debug.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\devices\;C:\Program Files (x86)\PICC\drivers\
+[dist\default\debug\MPU_sensor.X.debug.c]
+Type=4
+[mru-list]
+1=dist\default\debug\MPU_sensor.X.debug.c
+[Units]
+Count=3
+1=build\default\debug\main
+2=build\default\debug\MyMath
+3=build\default\debug\MPU9250\mpu9250_program
+Link=1
