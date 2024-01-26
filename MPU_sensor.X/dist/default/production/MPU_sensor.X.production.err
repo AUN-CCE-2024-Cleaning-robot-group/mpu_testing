@@ -1,13 +1,10 @@
-C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@I2C_WRITEU_1)
-C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (mpu9250_readByte)
-C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (mpu9250_read_gyro)
-C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@ADDFF)
-C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@DIVFF)
-C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@MULFF)
-C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (read_word)
-C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@ITOF)
-C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@SITOF)
-C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@SFTOI)
-      Memory usage:   ROM=34%      RAM=5% - 10%
-      0 Errors,  10 Warnings.
+C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:3:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@I2C_WRITEU_1)
+C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:3:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (mpu9250_readByte)
+C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:3:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (mpu9250_read_gyro)
+C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:3:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@ADDFF)
+C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:3:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@DIVFF)
+C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:3:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@MULFF)
+C:\Users\hp\Desktop\MPU_sensor.X\$linker.c:3:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@SFTOI)
+      Memory usage:   ROM=38%      RAM=55% - 60%
+      0 Errors,  7 Warnings.
 Build Successful.

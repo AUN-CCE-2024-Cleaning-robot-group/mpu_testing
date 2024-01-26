@@ -1,0 +1,3 @@
+D:\PIC\projects\MagnetometerCalibration .X\mpu9250_program.c:145:1:  Warning#214  Operator precedance rules may not be as intended, use () to clarify
+D:\PIC\projects\MagnetometerCalibration .X\mpu9250_program.o ===>  0 Errors,  1 Warnings.
+Build Successful.

@@ -12,7 +12,8 @@ Type=4
 [mru-list]
 1=dist\default\production\MPU_sensor.X.production.c
 [Units]
-Count=2
+Count=3
 1=build\default\production\main
-2=build\default\production\MPU9250\mpu9250_program
+2=build\default\production\SSD1780OLED_program
+3=build\default\production\mpu9250_program
 Link=1

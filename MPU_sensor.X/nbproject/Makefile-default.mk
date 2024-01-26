@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c MPU9250/mpu9250_program.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c SSD1780OLED_program.c mpu9250_program.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/MPU9250/mpu9250_program.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/MPU9250/mpu9250_program.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.o ${OBJECTDIR}/SSD1780OLED_program.o ${OBJECTDIR}/mpu9250_program.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.o.d ${OBJECTDIR}/SSD1780OLED_program.o.d ${OBJECTDIR}/mpu9250_program.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/MPU9250/mpu9250_program.o
+OBJECTFILES=${OBJECTDIR}/main.o ${OBJECTDIR}/SSD1780OLED_program.o ${OBJECTDIR}/mpu9250_program.o
 
 # Source Files
-SOURCEFILES=main.c MPU9250/mpu9250_program.c
+SOURCEFILES=main.c SSD1780OLED_program.c mpu9250_program.c
 
 
 
@@ -100,7 +100,7 @@ sourceline.gcccompat=sourceline="\#device ANSI" sourceline="\#device PASS_STRING
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk 
 	${MKDIR} ${OBJECTDIR} 
-ifeq (2,1) 
+ifeq (3,1) 
 	${MKDIR} ${DISTDIR} 
 	${MP_CC}  out="${OBJECTDIR}"  main.c +FH +DF +CC #__DEBUG=1 +ICD +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 
 	@mv ${OBJECTDIR}/main.cof "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.cof" 
@@ -110,22 +110,34 @@ else
 	
 endif 
 	
-${OBJECTDIR}/MPU9250/mpu9250_program.o: MPU9250/mpu9250_program.c  nbproject/Makefile-${CND_CONF}.mk 
-	${MKDIR} ${OBJECTDIR}/MPU9250 
-ifeq (2,1) 
+${OBJECTDIR}/SSD1780OLED_program.o: SSD1780OLED_program.c  nbproject/Makefile-${CND_CONF}.mk 
+	${MKDIR} ${OBJECTDIR} 
+ifeq (3,1) 
 	${MKDIR} ${DISTDIR} 
-	${MP_CC}  out="${OBJECTDIR}\MPU9250"  MPU9250/mpu9250_program.c +FH +DF +CC #__DEBUG=1 +ICD +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 
-	@mv ${OBJECTDIR}/MPU9250/mpu9250_program.cof "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.cof" 
-	@mv ${OBJECTDIR}/MPU9250/mpu9250_program.hex "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.hex"
+	${MP_CC}  out="${OBJECTDIR}"  SSD1780OLED_program.c +FH +DF +CC #__DEBUG=1 +ICD +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 
+	@mv ${OBJECTDIR}/SSD1780OLED_program.cof "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.cof" 
+	@mv ${OBJECTDIR}/SSD1780OLED_program.hex "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.hex"
 else 
-	${MP_CC}  out=""${OBJECTDIR}\MPU9250"" MPU9250/mpu9250_program.c +EXPORT +FH +DF +CC #__DEBUG=1 +ICD +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 +EXPORTD="${OBJECTDIR}/MPU9250"  
+	${MP_CC}  out=""${OBJECTDIR}"" SSD1780OLED_program.c +EXPORT +FH +DF +CC #__DEBUG=1 +ICD +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 +EXPORTD="${OBJECTDIR}"  
+	
+endif 
+	
+${OBJECTDIR}/mpu9250_program.o: mpu9250_program.c  nbproject/Makefile-${CND_CONF}.mk 
+	${MKDIR} ${OBJECTDIR} 
+ifeq (3,1) 
+	${MKDIR} ${DISTDIR} 
+	${MP_CC}  out="${OBJECTDIR}"  mpu9250_program.c +FH +DF +CC #__DEBUG=1 +ICD +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 
+	@mv ${OBJECTDIR}/mpu9250_program.cof "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.cof" 
+	@mv ${OBJECTDIR}/mpu9250_program.hex "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.hex"
+else 
+	${MP_CC}  out=""${OBJECTDIR}"" mpu9250_program.c +EXPORT +FH +DF +CC #__DEBUG=1 +ICD +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 +EXPORTD="${OBJECTDIR}"  
 	
 endif 
 	
 else
 ${OBJECTDIR}/main.o: main.c  nbproject/Makefile-${CND_CONF}.mk 
 	${MKDIR} ${OBJECTDIR} 
-ifeq (2,1) 
+ifeq (3,1) 
 	${MKDIR} ${DISTDIR} 
 	${MP_CC}  out="${OBJECTDIR}"  main.c +FH +DF +CC +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 
 	@mv ${OBJECTDIR}/main.cof "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.cof" 
@@ -135,15 +147,27 @@ else
 	
 endif 
 	
-${OBJECTDIR}/MPU9250/mpu9250_program.o: MPU9250/mpu9250_program.c  nbproject/Makefile-${CND_CONF}.mk 
-	${MKDIR} ${OBJECTDIR}/MPU9250 
-ifeq (2,1) 
+${OBJECTDIR}/SSD1780OLED_program.o: SSD1780OLED_program.c  nbproject/Makefile-${CND_CONF}.mk 
+	${MKDIR} ${OBJECTDIR} 
+ifeq (3,1) 
 	${MKDIR} ${DISTDIR} 
-	${MP_CC}  out="${OBJECTDIR}\MPU9250"  MPU9250/mpu9250_program.c +FH +DF +CC +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 
-	@mv ${OBJECTDIR}/MPU9250/mpu9250_program.cof "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.cof" 
-	@mv ${OBJECTDIR}/MPU9250/mpu9250_program.hex "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.hex"
+	${MP_CC}  out="${OBJECTDIR}"  SSD1780OLED_program.c +FH +DF +CC +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 
+	@mv ${OBJECTDIR}/SSD1780OLED_program.cof "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.cof" 
+	@mv ${OBJECTDIR}/SSD1780OLED_program.hex "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.hex"
 else 
-	${MP_CC}  out=""${OBJECTDIR}\MPU9250"" MPU9250/mpu9250_program.c +EXPORT +FH +DF +CC +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 +EXPORTD="${OBJECTDIR}/MPU9250"  
+	${MP_CC}  out=""${OBJECTDIR}"" SSD1780OLED_program.c +EXPORT +FH +DF +CC +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 +EXPORTD="${OBJECTDIR}"  
+	
+endif 
+	
+${OBJECTDIR}/mpu9250_program.o: mpu9250_program.c  nbproject/Makefile-${CND_CONF}.mk 
+	${MKDIR} ${OBJECTDIR} 
+ifeq (3,1) 
+	${MKDIR} ${DISTDIR} 
+	${MP_CC}  out="${OBJECTDIR}"  mpu9250_program.c +FH +DF +CC +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 
+	@mv ${OBJECTDIR}/mpu9250_program.cof "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.cof" 
+	@mv ${OBJECTDIR}/mpu9250_program.hex "${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.hex"
+else 
+	${MP_CC}  out=""${OBJECTDIR}"" mpu9250_program.c +EXPORT +FH +DF +CC +Y=9 +EA +DF +LN +T +A +M +J +Z -P #__18F4550=1 +EXPORTD="${OBJECTDIR}"  
 	
 endif 
 	
@@ -154,20 +178,20 @@ endif
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
 ${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk    
 	${MKDIR} ${DISTDIR} 
-ifeq (2,1) 
+ifeq (3,1) 
 	
 else 
-	${MP_LD}   out="${DISTDIR}"  +FH +DF +CC LINK=MPU_sensor.X.${IMAGE_TYPE}.hex=${OBJECTDIR}/main.o,${OBJECTDIR}/MPU9250/mpu9250_program.o +Y=9 +EA +DF +LN +T +A +M +J +Z -P
+	${MP_LD}   out="${DISTDIR}"  +FH +DF +CC LINK=MPU_sensor.X.${IMAGE_TYPE}.hex=${OBJECTDIR}/main.o,${OBJECTDIR}/SSD1780OLED_program.o,${OBJECTDIR}/mpu9250_program.o +Y=9 +EA +DF +LN +T +A +M +J +Z -P
 	
 endif 
 	
 else
 ${DISTDIR}/MPU_sensor.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}: ${OBJECTFILES}  nbproject/Makefile-${CND_CONF}.mk   
 	${MKDIR} ${DISTDIR} 
-ifeq (2,1) 
+ifeq (3,1) 
 	
 else 
-	${MP_LD}   out="${DISTDIR}"  +FH +DF +CC LINK=MPU_sensor.X.${IMAGE_TYPE}.hex=${OBJECTDIR}/main.o,${OBJECTDIR}/MPU9250/mpu9250_program.o +Y=9 +EA +DF +LN +T +A +M +J +Z -P
+	${MP_LD}   out="${DISTDIR}"  +FH +DF +CC LINK=MPU_sensor.X.${IMAGE_TYPE}.hex=${OBJECTDIR}/main.o,${OBJECTDIR}/SSD1780OLED_program.o,${OBJECTDIR}/mpu9250_program.o +Y=9 +EA +DF +LN +T +A +M +J +Z -P
 	
 endif 
 	

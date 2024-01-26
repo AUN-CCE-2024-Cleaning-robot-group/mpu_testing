@@ -1,7 +1,7 @@
 D G "__PCH__" 0 0 ""5.015""
 D G "__DEVICE__" 0 0 ""
-D G "__DATE__" 0 0 ""18-Dec-23""
-D G "__TIME__" 0 0 ""07:20:03""
+D G "__DATE__" 0 0 ""26-Jan-24""
+D G "__TIME__" 0 0 ""19:24:53""
 D G "__18F4550" 0 0 "1" "* File:   mpu9250_config.h"
 C G "" 0 1 1 "*"
 C G "" 0 1 1 "*"
@@ -1533,40 +1533,101 @@ f G "mpu9250_gyro_calibration" 9 49 "void(*RateCalibration_t RateCalibration)" `
 f G "mpu9250_print_module_values" 9 51 "void()" `996 
 V L "Angle" 9 53 "*Angle_t" `998 
 V L "accelData" 9 53 "*float" `999 
-f G "mpu9250_calculate_angles" 9 53 "void(*Angle_t Angle,*float accelData)" `997 
-V L "KalmanState" 9 55 "float" `1002 
-V L "KalmanUncertainty" 9 55 "float" `1003 
-V L "KalmanInput" 9 55 "float" `1004 
-V L "KalmanMeasurement" 9 55 "float" `1005 
-V L "Kalman1DOutput" 9 55 "*float" `1006 
-f G "kalman_1d" 9 55 "void(float KalmanState,float KalmanUncertainty,float KalmanInput,float KalmanMeasurement,*float Kalman1DOutput)" `1001  "MPU9250_INTERFACE_H *"
+V L "magData" 9 53 "*float" `1000 
+f G "mpu9250_calculate_angles" 9 53 "void(*Angle_t Angle,*float accelData,*float magData)" `997 
+V L "KalmanState" 9 55 "float" `1004 
+V L "KalmanUncertainty" 9 55 "float" `1005 
+V L "KalmanInput" 9 55 "float" `1006 
+V L "KalmanMeasurement" 9 55 "float" `1007 
+V L "Kalman1DOutput" 9 55 "*float" `1008 
+f G "kalman_1d" 9 55 "void(float KalmanState,float KalmanUncertainty,float KalmanInput,float KalmanMeasurement,*float Kalman1DOutput)" `1003  "MPU9250_INTERFACE_H *"
 C L "kalman_1d" 11 1 1 "*"
 C L "kalman_1d" 11 1 1 "*"
 C L "kalman_1d" 11 1 2 "*"
-f G "imu_update" 0 12 "void()" `1008  "Declare variables to store the sensor values"
-V G "gyro" 0 14 "float[3]" `948 
-V G "mag" 0 15 "float[3]" `949 
-V G "accel" 0 16 "float[3]" `950 
-V G "RateCalibration" 0 18 "RateCalibration_t" `1009 
-V G "Angle" 0 19 "Angle_t" `1010 
-V G "KalmanAngleRoll" 0 21 "float" `1011 
-V G "KalmanUncertaintyAngleRoll" 0 22 "int8" `1012 
-V G "KalmanAnglePitch" 0 23 "float" `1013 
-V G "KalmanUncertaintyAnglePitch" 0 24 "int8" `1014 
-V G "Kalman1DOutput" 0 25 "float[1]" `1015 
-C L "imu_update" 0 25 1 "FUNCTION"
-F G "imu_update" 0 29 "void()" `1008 
-F G "MAIN" 0 48 "void()" `1018 
-C L "MAIN" 0 25 4 "FUNCTION"
-C L "MAIN" 0 25 1 "FUNCTION"
-C L "MAIN" 0 25 1 "FUNCTION"
-C L "MAIN" 0 25 1 "FUNCTION"
-C L "MAIN" 0 25 1 "FUNCTION"
-C L "MAIN" 0 25 1 "FUNCTION"
-C L "MAIN" 0 25 1 "FUNCTION"
-V L "mag" 0 80 "float[3]" `1036 
-C L "MAIN" 0 25 1 "FUNCTION"
-C L "MAIN" 0 25 1 "FUNCTION"
+C L "kalman_1d" 12 1 1 "*"
+C L "kalman_1d" 12 1 1 "*"
+D G "SSD1780OLED_INTERFACE_H" 12 9 ""
+E G "SendData" 12 15 "0" `1011 
+E G "SendCommand" 12 15 "1" `1012 
+T G "SendByte_T" 12 15 "" `1013 
+E G "PageAddressing" 12 17 "0" `1015 
+E G "HorizontalAddressing" 12 17 "1" `1016 
+E G "VerticalAddressing" 12 17 "2" `1017 
+T G "OledScreenAdressing_T" 12 17 "" `1018 
+f G "VOledInit" 12 20 "void()" `1019 
+V L "ucSendByte" 12 22 "uint8_t" `1021 
+V L "xByteType" 12 22 "int8" `1022 
+f G "VOledSend" 12 22 "uint8_t(uint8_t ucSendByte,int8 xByteType)" `1020 
+V L "ucCommand" 12 23 "uint8_t" `1024 
+f G "VOledSendCommand" 12 23 "uint8_t(uint8_t ucCommand)" `1023 
+V L "ucData" 12 24 "uint8_t" `1026 
+f G "VOledSendData" 12 24 "void(uint8_t ucData)" `1025 
+V L "xScreenAdressing" 12 25 "OledScreenAdressing_T" `1028 
+f G "VOledSetAddressingMode" 12 25 "void(OledScreenAdressing_T xScreenAdressing)" `1027 
+V L "usColumnAddressStart" 12 27 "uint16_t" `1030 
+V L "usColumnAddressEnd" 12 27 "uint16_t" `1031 
+V L "usPageAddressStart" 12 28 "uint16_t" `1032 
+V L "usPageAddressEnd" 12 28 "uint16_t" `1033 
+f G "VOledSetAddressSpace" 12 28 "void(uint16_t usColumnAddressStart,uint16_t usColumnAddressEnd,uint16_t usPageAddressStart,uint16_t usPageAddressEnd)" `1029 
+V L "x" 12 29 "uint8_t" `1035 
+V L "y" 12 29 "uint8_t" `1036 
+V L "ucColor" 12 29 "uint8_t" `1037 
+f G "VOledDrawPixel" 12 29 "void(uint8_t x,uint8_t y,uint8_t ucColor)" `1034 
+f G "VOledDisplay" 12 30 "void()" `1038 
+V L "ucColor" 12 31 "uint8_t" `1040 
+f G "VOledFillScreen" 12 31 "void(uint8_t ucColor)" `1039 
+V L "x" 12 32 "uint16_t" `1042 
+V L "y" 12 32 "uint16_t" `1043 
+V L "c" 12 32 "uint8_t" `1044 
+V L "size" 12 32 "uint8_t" `1045 
+f G "VOled_DrawChar" 12 32 "void(uint16_t x,uint16_t y,uint8_t c,uint8_t=1 size)" `1041 
+V L "x" 12 34 "uint16_t" `1048 
+V L "y" 12 34 "uint16_t" `1049 
+V L "ptrString" 12 34 "*uint8_t" `1050 
+f G "VOled_DrawStringFast" 12 34 "void(uint16_t x,uint16_t y,*uint8_t ptrString)" `1047 
+V L "x" 12 35 "uint16_t" `1052 
+V L "y" 12 35 "uint16_t" `1053 
+V L "ptrString" 12 35 "*uint8_t" `1054 
+V L "size" 12 35 "uint8_t" `1055 
+f G "VOled_Print" 12 35 "void(uint16_t x,uint16_t y,*uint8_t ptrString,uint8_t=1 size)" `1051 
+V L "x0" 12 36 "int16_t" `1058 
+V L "y0" 12 36 "int16_t" `1059 
+V L "x1" 12 36 "int16_t" `1060 
+V L "y1" 12 36 "int16_t" `1061 
+V L "color" 12 37 "uint16_t" `1062 
+f G "VOled_writeLine" 12 37 "void(int16_t x0,int16_t y0,int16_t x1,int16_t y1,uint16_t color)" `1057 
+V L "x0" 12 38 "int16_t" `1064 
+V L "y0" 12 38 "int16_t" `1065 
+V L "x1" 12 38 "int16_t" `1066 
+V L "y1" 12 38 "int16_t" `1067 
+V L "ucColor" 12 39 "uint8_t" `1068 
+f G "VOledFillRect" 12 39 "void(int16_t x0,int16_t y0,int16_t x1,int16_t y1,uint8_t ucColor)" `1063  "SSD1780OLED_INTERFACE_H *"
+f G "imu_update" 0 17 "void()" `1069  "Declare variables to store the sensor values"
+V G "gyro" 0 19 "float[3]" `948 
+V G "mag" 0 20 "float[3]" `949 
+V G "accel" 0 21 "float[3]" `950 
+V G "RateCalibration" 0 23 "RateCalibration_t" `1070 
+V G "Angle" 0 24 "Angle_t" `1071 
+V G "KalmanAngleRoll" 0 26 "float" `1072 
+V G "KalmanUncertaintyAngleRoll" 0 27 "int8" `1073 
+V G "KalmanAnglePitch" 0 28 "float" `1074 
+V G "KalmanUncertaintyAnglePitch" 0 29 "int8" `1075 
+V G "Kalman1DOutput" 0 30 "float[1]" `1076 
+C L "imu_update" 0 30 1 "FUNCTION"
+F G "imu_update" 0 34 "void()" `1069 
+F G "i2c_reset" 0 52 "void()" `1079 
+V L "i" 0 55 "int8" `1080 
+C L "i2c_reset" 0 30 1 "FUNCTION"
+C L "i2c_reset" 0 30 1 "FUNCTION"
+C L "i2c_reset" 0 30 1 "FUNCTION"
+F G "MAIN" 0 76 "void()" `1081 
+C L "MAIN" 0 30 1 "FUNCTION"
+C L "MAIN" 0 30 1 "FUNCTION"
+C L "MAIN" 0 30 1 "FUNCTION"
+C L "MAIN" 0 30 1 "FUNCTION"
+C L "MAIN" 0 30 1 "FUNCTION"
+C L "MAIN" 0 30 1 "FUNCTION"
+C L "MAIN" 0 30 1 "FUNCTION"
 F B "reset_cpu" 0 0
 F B "abs" 1 0
 F B "sleep" 0 1

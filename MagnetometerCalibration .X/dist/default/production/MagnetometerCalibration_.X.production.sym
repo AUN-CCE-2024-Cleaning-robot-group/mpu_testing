@@ -1,0 +1,359 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+004     @INTERRUPT_AREA
+005     @INTERRUPT_AREA
+006     @INTERRUPT_AREA
+007     @INTERRUPT_AREA
+008     @INTERRUPT_AREA
+009     @INTERRUPT_AREA
+00A     @INTERRUPT_AREA
+00B     @INTERRUPT_AREA
+00C     @INTERRUPT_AREA
+00D     @INTERRUPT_AREA
+00E     @INTERRUPT_AREA
+00F     @INTERRUPT_AREA
+010     @INTERRUPT_AREA
+011     @INTERRUPT_AREA
+012     @INTERRUPT_AREA
+013     @INTERRUPT_AREA
+014     @INTERRUPT_AREA
+015     @INTERRUPT_AREA
+016     @INTERRUPT_AREA
+017-018 strtok.save
+019-01C _Randseed
+01D-028 gyro
+029-034 mag
+035-040 accel
+041-04C RateCalibration
+04D-058 Angle
+059-05C atan2.y
+059     mpu9250_init.status
+059-05C @PRINTF_L32D_115200_31766_31767FPFPF.P1
+059     mpu9250_print_initRegisters.data
+059-05A mpu9250_gyro_calibration.RateCalibration
+059     MAIN.@SCRATCH1
+05A     mpu9250_writeByte.deviceAddress
+05A     @PRINTF_X_115200_31766_31767.P1
+05A     @PSTRINGC_115200_31766_31767.@SCRATCH1
+05B     @PRINTF_X_115200_31766_31767.P1
+05B     mpu9250_writeByte.registerAddress
+05B-05C mpu9250_gyro_calibration.RateCalibrationNumber
+05B     @PSTRINGC_115200_31766_31767.@SCRATCH2
+05C     mpu9250_writeByte.data
+05D     @PRINTF_L32D_115200_31766_31767FPFPF.P1
+05D     @delay_ms1.P2
+05D-060 atan2.x
+05D     mpu9250_writeByte.@SCRATCH1
+05D     mpu9250_gyro_calibration.@SCRATCH1
+05E     @PRINTF_L32D_115200_31766_31767FPFPF.@SCRATCH1
+05E     mpu9250_writeByte.@SCRATCH2
+05E     mpu9250_gyro_calibration.@SCRATCH2
+05F     @PRINTF_L32D_115200_31766_31767FPFPF.@SCRATCH2
+05F     mpu9250_gyro_calibration.@SCRATCH3
+060     @PRINTF_L32D_115200_31766_31767FPFPF.@SCRATCH3
+060     mpu9250_gyro_calibration.@SCRATCH4
+061-064 atan2.z
+061     @PRINTF_L32D_115200_31766_31767FPFPF.@SCRATCH4
+061     mpu9250_gyro_calibration.@SCRATCH5
+062     @PRINTF_L32D_115200_31766_31767FPFPF.@SCRATCH5
+062     mpu9250_gyro_calibration.@SCRATCH6
+063     @PRINTF_L32D_115200_31766_31767FPFPF.@SCRATCH6
+063     mpu9250_gyro_calibration.@SCRATCH7
+064     @PRINTF_L32D_115200_31766_31767FPFPF.@SCRATCH7
+064     mpu9250_gyro_calibration.@SCRATCH8
+065.0   atan2.sign
+065     @PRINTF_L32D_115200_31766_31767FPFPF.@SCRATCH8
+066     atan2.quad
+077-07A @PRINTF_L32D_115200_31766_31767FPFPFR.P1
+077-078 mpu9250_read_gyro.gyroData
+077     imu_update.@SCRATCH1
+078     imu_update.@SCRATCH2
+079-07C @SFTOI.P1
+079-07A mpu9250_read_gyro.gyroX
+079     imu_update.@SCRATCH3
+07A     @PRINTF_D_115200_31766_31767.P1
+07A     @PSTRINGCN_115200_31766_31767.P2
+07A     imu_update.@SCRATCH4
+07B-07C mpu9250_read_gyro.gyroY
+07B-07C mpu9250_calculate_angles.Angle
+07B     @PRINTF_D_115200_31766_31767.P1
+07B     @PRINTF_L32D_115200_31766_31767FPFPFR.P2
+07B     @PSTRINGCN_115200_31766_31767.@SCRATCH1
+07C     @PSTRINGCN_115200_31766_31767.@SCRATCH2
+07C     @PRINTF_D_115200_31766_31767.@SCRATCH1
+07C     @PRINTF_L32D_115200_31766_31767FPFPFR.@SCRATCH1
+07D-07E mpu9250_calculate_angles.accelData
+07D-07E mpu9250_read_gyro.gyroZ
+07D     @PRINTF_D_115200_31766_31767.@SCRATCH2
+07D     @PRINTF_L32D_115200_31766_31767FPFPFR.@SCRATCH2
+07E     @PRINTF_D_115200_31766_31767.@SCRATCH3
+07E     @PRINTF_L32D_115200_31766_31767FPFPFR.@SCRATCH3
+07F     read_gyro_word.registerHigh
+07F-080 mpu9250_calculate_angles.magData
+07F     @PRINTF_D_115200_31766_31767.@SCRATCH4
+07F     @PRINTF_L32D_115200_31766_31767FPFPFR.@SCRATCH4
+07F     mpu9250_read_gyro.@SCRATCH1
+080     read_gyro_word.registerLow
+080     @DIV88.P1
+080     @PRINTF_L32D_115200_31766_31767FPFPFR.@SCRATCH5
+080     mpu9250_read_gyro.@SCRATCH2
+081     @DIV88.P1
+081-082 read_gyro_word.data
+081-08C mpu9250_calculate_angles.hi_cal
+081     @PRINTF_L32D_115200_31766_31767FPFPFR.@SCRATCH6
+082     @DIV88.@SCRATCH1
+082     @PRINTF_L32D_115200_31766_31767FPFPFR.@SCRATCH7
+083     @PRINTF_L32D_115200_31766_31767FPFPFR.@SCRATCH8
+084-087 @DIV3232.P1
+084-087 @FTOSD.P2
+088-08B @DIV3232.P1
+088     @FTOSD.@SCRATCH1
+08C     @DIV3232.@SCRATCH1
+08D     mpu9250_calculate_angles.i
+08D     @DIV3232.@SCRATCH2
+08E-08F mpu9250_read_magnometer.magData
+08E-08F mpu9250_read_accelerometer.accelData
+08E     @DIV3232.@SCRATCH3
+08E     mpu9250_calculate_angles.@SCRATCH1
+08F     @DIV3232.@SCRATCH4
+08F     mpu9250_calculate_angles.@SCRATCH2
+090-091 mpu9250_read_magnometer.magX
+090-091 mpu9250_read_accelerometer.accelX
+090     @DIV3232.@SCRATCH5
+090     mpu9250_calculate_angles.@SCRATCH3
+091     mpu9250_calculate_angles.@SCRATCH4
+092-093 mpu9250_read_magnometer.magY
+092-093 mpu9250_read_accelerometer.accelY
+092     mpu9250_calculate_angles.@SCRATCH5
+093     mpu9250_calculate_angles.@SCRATCH6
+094-095 mpu9250_read_accelerometer.accelZ
+094-095 mpu9250_read_magnometer.magZ
+094     mpu9250_calculate_angles.@SCRATCH7
+095     mpu9250_calculate_angles.@SCRATCH8
+096     read_accel_word.registerHigh
+096     mpu9250_read_magnometer.x_axis
+096     mpu9250_read_accelerometer.@SCRATCH1
+096     mpu9250_calculate_angles.@SCRATCH9
+097     read_accel_word.registerLow
+097     mpu9250_read_magnometer.y_axis
+097     mpu9250_read_accelerometer.@SCRATCH2
+097     mpu9250_calculate_angles.@SCRATCH10
+098-099 read_accel_word.data
+098     mpu9250_read_magnometer.z_axis
+098     mpu9250_read_accelerometer.@SCRATCH3
+098     mpu9250_calculate_angles.@SCRATCH11
+099     mpu9250_read_magnometer.status
+099     mpu9250_read_accelerometer.@SCRATCH4
+099     mpu9250_calculate_angles.@SCRATCH12
+09A-09D sqrt.x
+09A     read_mag_word.registerHigh
+09A-09D atan.x
+09A     mpu9250_read_accelerometer.@SCRATCH5
+09A     mpu9250_read_magnometer.@SCRATCH1
+09A     mpu9250_calculate_angles.@SCRATCH13
+09B     read_mag_word.registerLow
+09B     mpu9250_read_accelerometer.@SCRATCH6
+09B     mpu9250_read_magnometer.@SCRATCH2
+09B     mpu9250_calculate_angles.@SCRATCH14
+09C-09D read_mag_word.data
+09C     mpu9250_read_accelerometer.@SCRATCH7
+09C     mpu9250_read_magnometer.@SCRATCH3
+09D-09E @ITOF.P1
+09D     mpu9250_read_accelerometer.@SCRATCH8
+09D     mpu9250_read_magnometer.@SCRATCH4
+09E     read_word.deviceAddress
+09E-0A1 atan.y
+09E-0A1 sqrt.y
+09E     mpu9250_read_magnometer.@SCRATCH5
+09F     read_word.registerHigh
+09F     mpu9250_read_magnometer.@SCRATCH6
+0A0     read_word.registerLow
+0A0     mpu9250_read_magnometer.@SCRATCH7
+0A1-0A2 read_word.data
+0A1     mpu9250_read_magnometer.@SCRATCH8
+0A2-0A3 @SITOF.P1
+0A2-0A5 atan.res
+0A2-0A5 sqrt.res
+0A3     read_word.highByte
+0A4     read_word.lowByte
+0A5     mpu9250_readByte.deviceAddress
+0A5     read_word.@SCRATCH1
+0A6-0A9 atan.r
+0A6-0A7 sqrt.p
+0A6     mpu9250_readByte.registerAddress
+0A6     read_word.@SCRATCH2
+0A7-0A8 mpu9250_readByte.data
+0A8     sqrt.@SCRATCH1
+0A9     sqrt.@SCRATCH2
+0A9     mpu9250_readByte.@SCRATCH1
+0AA.0   atan.s
+0AA.1   atan.flag
+0AA     sqrt.@SCRATCH3
+0AA     mpu9250_readByte.@SCRATCH2
+0AB     @I2C_WRITEU_1.P1
+0AB     @I2C_READU_1.P2
+0AB-0AE @FLT.P3
+0AB     sqrt.@SCRATCH4
+0AB     atan.@SCRATCH1
+0AC     atan.@SCRATCH2
+0AD     atan.@SCRATCH3
+0AE     atan.@SCRATCH4
+0AF-0B2 @MULFF.P1
+0AF-0B2 @DIVFF.P2
+0AF-0B2 @ADDFF.P3
+0AF-0B2 @FLT.P4
+0B3-0B6 @MULFF.P1
+0B3-0B6 @DIVFF.P2
+0B3-0B6 @ADDFF.P3
+0B3     @FLT.@SCRATCH1
+0B4     @FLT.@SCRATCH2
+0B7     @MULFF.@SCRATCH1
+0B7     @ADDFF.@SCRATCH1
+0B7     @DIVFF.@SCRATCH1
+0B8     @MULFF.@SCRATCH2
+0B8     @ADDFF.@SCRATCH2
+0B8     @DIVFF.@SCRATCH2
+0B9     @MULFF.@SCRATCH3
+0B9     @ADDFF.@SCRATCH3
+0B9     @DIVFF.@SCRATCH3
+0BA     @ADDFF.@SCRATCH4
+0BA     @DIVFF.@SCRATCH4
+0BB     @ADDFF.@SCRATCH5
+0BB     @DIVFF.@SCRATCH5
+0BC     @ADDFF.@SCRATCH6
+0BC     @DIVFF.@SCRATCH6
+0BD     @ADDFF.@SCRATCH7
+0BE     @ADDFF.@SCRATCH8
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2_LOW
+FBB     CCP_2
+FBC     CCP_2_HIGH
+FBE     CCP_1_LOW
+FBE     CCP_1
+FBF     CCP_1_HIGH
+FE1-FE2 @WRITE_PACKED_MEMORY.P1
+FE1-FE2 @READ_PACKED_MEMORY.P2
+FE9-FEA @WRITE_PROGRAM_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P3
+FE9-FEA @READ_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+000096  soft_iron.call
+0000A6  soft_iron.data
+0000CA  @I2C_WRITEU_1
+0000E6  @I2C_READU_1
+000102  mpu9250_readByte
+000146  read_word
+00017A  read_gyro_word
+000192  @SITOF
+0001DA  @DIVFF
+000334  mpu9250_read_gyro
+000432  read_accel_word
+00044A  @ADDFF
+0006B4  mpu9250_read_accelerometer
+00087A  read_mag_word
+000892  @ITOF
+0008C8  @MULFF
+0009BA  mpu9250_read_magnometer
+000D18  @FLT
+000D8E  sqrt
+000E9C  atan
+001382  mpu9250_calculate_angles
+001BFA  @SFTOI
+001BFA  @SFTOI
+001C32  @PSTRINGCN_115200_31766_31767
+001C32  @PSTRINGCN_115200_31766_31767
+001C52  @DIV88
+001C7A  @PRINTF_D_115200_31766_31767
+001D2C  @FTOSD
+001D2C  @FTOSD
+001D6A  @DIV3232
+001D6A  @DIV3232
+001DF8  @PRINTF_L32D_115200_31766_31767FPFPFR
+001FBC  imu_update
+002100  @const1008.call
+00211A  @const1019.call
+002148  @const1033.call
+002164  @const1035.call
+00219C  @const1036.call
+0021BE  @const1037.call
+002216  @const1192.call
+00222E  @const1194.call
+00224A  @const1195.call
+002260  @const1196.call
+00227A  @const1198.call
+002290  @const1204.call
+0022AA  @const1205.call
+0022C4  @const1206.call
+0022DE  @const1207.call
+0022FE  @const1208.call
+00231C  @const1222.call
+002356  @const1231.call
+002390  @const1232.call
+0023C8  @delay_ms1
+0023EE  @PSTRINGC_115200_31766_31767
+0023EE  @PSTRINGC_115200_31766_31767
+002410  mpu9250_writeByte
+00245E  mpu9250_init
+002558  @PRINTF_X_115200_31766_31767
+00259A  mpu9250_print_initRegisters
+002796  mpu9250_gyro_calibration
+0029D0  @PRINTF_L32D_115200_31766_31767FPFPF
+0029D0  @PRINTF_L32D_115200_31766_31767FPFPF
+002B88  MAIN
+002B88  @cinit1
+002C06  @cinit2
+0136  StrtoulGO
+0136  StrtolGO
+
+Project Directory:
+    D:\PIC\projects\MagnetometerCalibration .X\
+
+Project Files:
+    main.c (link)                                           [26-Jan-24 18:39  CRC=042AD9B8]
+    configure.h                                             [26-Jan-24 18:36  CRC=335177E4]
+    C:\Program Files (x86)\PICC\devices\18F4550.h           [12-Nov-13 13:35  CRC=5337E248]
+    C:\Program Files (x86)\PICC\drivers\stdint.h            [30-Dec-08 08:01  CRC=9F7F640F]
+    C:\Program Files (x86)\PICC\drivers\stdio.h             [31-Jul-07 12:24  CRC=4E4534F4]
+    C:\Program Files (x86)\PICC\drivers\string.h            [14-Jul-11 09:13  CRC=23EDEC8F]
+    C:\Program Files (x86)\PICC\drivers\stddef.h            [16-Jul-10 08:27  CRC=897CEC6C]
+    C:\Program Files (x86)\PICC\drivers\ctype.h             [03-Jan-08 12:55  CRC=2D1F019F]
+    C:\Program Files (x86)\PICC\drivers\stdlib.h            [08-Jun-11 13:39  CRC=0B6669CF]
+    mpu9250_interface.h                                     [26-Jan-24 17:59  CRC=79B31B3A]
+    mpu9250_config.h                                        [26-Jan-24 08:23  CRC=3A1DCDD2]
+    mpu9250_private.h                                       [26-Jan-24 08:23  CRC=ABEFB4D4]
+    mpu9250_program.c (link)                                [26-Jan-24 18:50  CRC=B3813069]
+    C:\Program Files (x86)\PICC\drivers\MATH.H              [28-Sep-12 10:35  CRC=546412C9]
+
+Source signature=1A73052B
+
+Units:
+    D:\PIC\projects\MagnetometerCalibration .X\build\default\production\main.o
+    D:\PIC\projects\MagnetometerCalibration .X\build\default\production\mpu9250_program.o
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      dist\default\production\MagnetometerCalibration_.X.production.err
+    Ext Symbols: dist\default\production\MagnetometerCalibration_.X.production.esym
+    INHX32:      dist\default\production\MagnetometerCalibration_.X.production.hex
+    Symbols:     dist\default\production\MagnetometerCalibration_.X.production.sym
+    List:        dist\default\production\MagnetometerCalibration_.X.production.lst
+    Debug/COFF:  dist\default\production\MagnetometerCalibration_.X.production.cof
+    Project:     MagnetometerCalibration_.X.production.ccspjt
+    Call Tree:   dist\default\production\MagnetometerCalibration_.X.production.tre
+    Statistics:  dist\default\production\MagnetometerCalibration_.X.production.STA

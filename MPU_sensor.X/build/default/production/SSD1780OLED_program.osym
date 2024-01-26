@@ -1,0 +1,53 @@
+_RETURN_
+CCP_1
+CCP_1_LOW
+CCP_1_HIGH
+CCP_2
+CCP_2_LOW
+CCP_2_HIGH
+PSP_DATA
+C1OUT
+C2OUT
+_Randseed
+Font
+Font2
+SSD1780OLED_buffer
+
+Project Directory:
+    C:\Users\hp\Desktop\MPU_sensor.X\
+
+Project Files:
+    SSD1780OLED_program.c                                   [15-Jan-24 22:25  CRC=E361ABF2]
+    configure.h                                             [26-Jan-24 19:04  CRC=335177E4]
+    ..\..\..\..\Program Files (x86)\PICC\devices\18F4550.h  [12-Nov-13 13:35  CRC=5337E248]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\stdint.h   [30-Dec-08 08:01  CRC=9F7F640F]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\stdio.h    [31-Jul-07 12:24  CRC=4E4534F4]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\string.h   [14-Jul-11 09:13  CRC=23EDEC8F]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\stddef.h   [16-Jul-10 08:27  CRC=897CEC6C]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\ctype.h    [03-Jan-08 12:55  CRC=2D1F019F]
+    ..\..\..\..\Program Files (x86)\PICC\drivers\stdlib.h   [08-Jun-11 13:39  CRC=0B6669CF]
+    SSD1780OLED_config.h                                    [15-Jan-24 20:09  CRC=F7113677]
+    SSD1780OLED_interface.h                                 [15-Jan-24 22:25  CRC=B387EAFC]
+
+Source signature=9BC0EFF9
+
+Units:
+    SSD1780OLED_program (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Output file:    Relocatable
+    Predefined symbols:
+       #define __18F4550 1
+
+Output Files:
+    XREF file:   build\default\production\SSD1780OLED_program.xsym
+    Errors:      build\default\production\SSD1780OLED_program.err
+    Ext Symbols: build\default\production\SSD1780OLED_program.esym
+    Object:      build\default\production\SSD1780OLED_program.o
+    Symbols:     build\default\production\SSD1780OLED_program.osym

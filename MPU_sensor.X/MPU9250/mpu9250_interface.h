@@ -43,14 +43,14 @@ void mpu9250_mag_init() ;
 void mpu9250_init() ;
 void mpu9250_print_initRegisters(void) ;
 void mpu9250_read_gyro(float gyroData[]) ;
-void mpu9250_read_magnometer(float magData[]) ;
+void mpu9250_read_magnometer(uint16_t magData[]) ;
 void mpu9250_read_accelerometer(float accelData[]) ;
 
 void mpu9250_gyro_calibration(  RateCalibration_t *RateCalibration ) ;
 
 void mpu9250_print_module_values(void) ;
 
-void mpu9250_calculate_angles(Angle_t *Angle ,float accelData[]);
+void mpu9250_calculate_angles(Angle_t *Angle ,float accelData[],uint16_t magData[]);
 
 void kalman_1d(float KalmanState,float KalmanUncertainty, float KalmanInput,float KalmanMeasurement,float Kalman1DOutput[]);
 

@@ -1,0 +1,12 @@
+D:\PIC\projects\MagnetometerCalibration .X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@I2C_WRITEU_1)
+D:\PIC\projects\MagnetometerCalibration .X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (mpu9250_readByte)
+D:\PIC\projects\MagnetometerCalibration .X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@PSTRINGCN_115200_31766_31767)
+D:\PIC\projects\MagnetometerCalibration .X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (mpu9250_read_gyro)
+D:\PIC\projects\MagnetometerCalibration .X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@ADDFF)
+D:\PIC\projects\MagnetometerCalibration .X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@DIVFF)
+D:\PIC\projects\MagnetometerCalibration .X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@MULFF)
+D:\PIC\projects\MagnetometerCalibration .X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@FTOSD)
+D:\PIC\projects\MagnetometerCalibration .X\$linker.c:2:8:  Warning#216  Interrupts disabled during call to prevent re-entrancy:  (@DIV3232)
+      Memory usage:   ROM=35%      RAM=4% - 9%
+      0 Errors,  9 Warnings.
+Build Successful.

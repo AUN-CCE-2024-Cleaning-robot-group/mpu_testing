@@ -1,0 +1,18 @@
+[PROJECT]
+Target=dist\default\production\MagnetometerCalibration_.X.production.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.015
+Compiler=PCH
+[Target Data]
+FileList=dist\default\production\MagnetometerCalibration_.X.production.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\devices\;C:\Program Files (x86)\PICC\drivers\
+[dist\default\production\MagnetometerCalibration_.X.production.c]
+Type=4
+[mru-list]
+1=dist\default\production\MagnetometerCalibration_.X.production.c
+[Units]
+Count=2
+1=build\default\production\main
+2=build\default\production\mpu9250_program
+Link=1

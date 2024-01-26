@@ -4,9 +4,14 @@
  *
  * Created on November 22, 2023, 3:19 PM
  */
+
 #include "configure.h"
-#include "MPU9250/mpu9250_interface.h"
+
+#include "mpu9250_interface.h"
 #include "mpu9250_private.h"
+#include"SSD1780OLED_interface.h"
+
+
 
 
 static void imu_update(void);
@@ -27,9 +32,8 @@ float Kalman1DOutput[]={0,0};       //angle predict, angle uncertainty predict
 #INT_TIMER2
 static void imu_update(void)
 {
-       output_toggle(PIN_E2);
        mpu9250_read_gyro(gyro);
-       mpu9250_calculate_angles(&Angle,accel);
+       mpu9250_calculate_angles(&Angle,accel,mag);
 
        kalman_1d(KalmanAngleRoll,KalmanUncertaintyAngleRoll,gyro[0] - RateCalibration.roll,Angle.roll,Kalman1DOutput);
 
@@ -44,23 +48,42 @@ static void imu_update(void)
 }
 
 
+void i2c_reset()
+{
+
+output_high(PIN_B0);
+for (int i = 0; i < 10; i++) 
+    { //9nth cycle acts as NACK
+        output_high(PIN_B1);
+        delay_us(5);
+         output_low(PIN_B1);
+        delay_us(5);
+    }
+  output_low(PIN_B0);
+  delay_us(5);
+  output_high(PIN_B1);
+  delay_us(5);
+  output_high(PIN_B0);
+  delay_us(5);
+  
+  output_float(PIN_B1);                           // SCL
+  output_float(PIN_B0);                           // SDA
+  i2c_init(1);
+
+}
+
 
 void main() {
     
     
-    delay_ms(3000);
-    //set_tris_c(0x80);                               // RC7 is RX input    RC6 is TX output
-                        //Enable global interrupts
-    //set_uart_speed(9600)     ;                      //Init the uart
-    //delay_ms(4000);
     
-    
-    output_float(PIN_B1);                           // SCL
-    output_float(PIN_B0);                           // SDA
-    
+  output_float(PIN_B1);                           // SCL
+  output_float(PIN_B0);                           // SDA
+
+    delay_ms(500);
 
     printf(ANSI_COLOR_YELLOW"start of init  \n\r"ANSI_COLOR_RESET );
-
+    
     mpu9250_init();                                 // Init the MPU9250
 
     mpu9250_print_initRegisters() ;                  // Print the registers of the MPU9250
@@ -74,18 +97,13 @@ void main() {
    // Declare a variable to store the loop counter
 
     enable_interrupts(GLOBAL);
-    setup_timer_2(T2_DIV_BY_1, 255, 1);
+    setup_timer_2(T2_DIV_BY_16, 255, 1);
     clear_interrupt(INT_TIMER2);
     enable_interrupts(INT_TIMER2);
-    float mag[3] = {0,0,0};
     // Loop forever
      while (1)
      {
-        mpu9250_read_magnometer(mag);
-       //printf("magx = %f  magy = %f magz = %f  \n\r",  mag[0],mag[1],mag[2]);
-        
-       printf("Roll = %d  Pitch = %d  \n\r",  (int)KalmanAngleRoll,(int) KalmanAnglePitch);
-       printf("Rollacc = %d  Pitchacc = %d  \n\r",  (int)(gyro[0] - RateCalibration.roll), (int)(gyro[1] - RateCalibration.pitch));
+      printf("yaw= %d  Pitch = %d  \n\r",  (int)Angle.yaw,(int) KalmanAnglePitch);
        
      }
 }

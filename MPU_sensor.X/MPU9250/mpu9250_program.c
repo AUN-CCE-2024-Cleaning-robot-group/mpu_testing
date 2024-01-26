@@ -2,7 +2,6 @@
 #include "mpu9250_config.h"
 #include "mpu9250_private.h"
 #include "mpu9250_interface.h"
-//#include "../MyMath.h"
 #include <stdlib.h>
 #include <MATH.H>
 
@@ -123,7 +122,7 @@ void mpu9250_read_accelerometer(float accelData[] ) {
 }
 
 //Function to read magnetometer data and convert it to uT
-void mpu9250_read_magnometer(float magData[]) {
+void mpu9250_read_magnometer(uint16_t magData[]) {
 
     int16_t magX, magY, magZ = 0;
     uint8_t x_axis , y_axis , z_axis ;
@@ -199,7 +198,7 @@ void mpu9250_print_module_values() {
 void mpu9250_gyro_calibration( RateCalibration_t *RateCalibration )
 {
 
-    for (uint16_t RateCalibrationNumber=0; RateCalibrationNumber<4000; RateCalibrationNumber ++) {
+    for (uint16_t RateCalibrationNumber=0; RateCalibrationNumber<2000; RateCalibrationNumber ++) {
         mpu9250_read_gyro(gyro);
         RateCalibration->roll += gyro[0];     //calculate average value of gyro in x axis
         RateCalibration->pitch  += gyro[1];     //calculate average value of gyro in y axis
@@ -207,26 +206,29 @@ void mpu9250_gyro_calibration( RateCalibration_t *RateCalibration )
 
         delay_ms(1) ;
     }
-    RateCalibration->roll /= 4000;     //calculate average value of gyro in x axis
-    RateCalibration->pitch  /= 4000;     //calculate average value of gyro in y axis
-    RateCalibration->yaw   /= 4000;     //calculate average value of gyro in z axis
+    RateCalibration->roll /= 2000;     //calculate average value of gyro in x axis
+    RateCalibration->pitch  /= 2000;     //calculate average value of gyro in y axis
+    RateCalibration->yaw   /= 2000;     //calculate average value of gyro in z axis
 
 
 }
 
 
 // Function to calculate the yaw, pitch and roll angles
-void mpu9250_calculate_angles(Angle_t *Angle ,float accelData[])
+void mpu9250_calculate_angles(Angle_t *Angle ,float accelData[],uint16_t magData[])
 {
 
         // Read the accelerometer and magnetometer values
         mpu9250_read_accelerometer(accelData);
+        mpu9250_read_magnometer(magData);
 
         // Calculate the roll angle
         Angle->roll = atan( accelData[1] / sqrt(  (float)(accelData[0] * accelData[0] + accelData[2] * accelData[2]) )) * 180.0 / PI;
         // Calculate the pitch angle
         Angle->pitch = atan( accelData[0] / sqrt( (float) (accelData[1] * accelData[1] + accelData[2] * accelData[2]) )) * (-180.0) / PI;
-//Angle->roll = atan(0.1);Angle->pitch= 1;
+        Angle->yaw = -1* atan(magData[0] / magData[1]) * 180 / PI;
+        
+        //Angle->roll = atan(0.1);Angle->pitch= 1;
 
 }
 

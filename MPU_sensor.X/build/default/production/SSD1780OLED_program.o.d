@@ -1,0 +1,1 @@
+C:\Users\hp\Desktop\MPU_sensor.X\build\default\production\SSD1780OLED_program.o: SSD1780OLED_program.c configure.h 18F4550.h stdint.h stdio.h string.h stddef.h ctype.h stdlib.h SSD1780OLED_config.h SSD1780OLED_interface.h 
